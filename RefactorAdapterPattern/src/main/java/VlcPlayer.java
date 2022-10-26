@@ -1,5 +1,3 @@
-package AdapterPatternToRefactor;
-
 public class VlcPlayer implements AdvancedMediaPlayer {
     @Override
     public void playVlcPlayer(String fileName) {

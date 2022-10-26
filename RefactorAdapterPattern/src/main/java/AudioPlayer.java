@@ -1,5 +1,3 @@
-package AdapterPatternToRefactor;
-
 public class AudioPlayer implements MusicPlayer {
     @Override
     public void playMusic(String audioType, String fileName) {

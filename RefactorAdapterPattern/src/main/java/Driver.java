@@ -1,5 +1,3 @@
-package AdapterPatternToRefactor;
-
 public class Driver {
     public static void main(String[] args) {
         AudioPlayer audioPlayer = new AudioPlayer();
