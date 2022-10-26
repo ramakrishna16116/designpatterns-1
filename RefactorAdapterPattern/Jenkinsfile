@@ -9,20 +9,19 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building version ${NEW_VERSION}'
+                gradle build
             }
         }
-        /*
         stage('Test') {
             steps {
                 echo 'Testing version ${NEW_VERSION}'
                 sh './gradlew test'
             }
-            post {
+            /*post {
                 always {
                     junit allowEmptyResults: false, testResults: "build/reports/tests/test/*.html"
                 }
-            }
+            }*/
         }
-        */
     }
 }
