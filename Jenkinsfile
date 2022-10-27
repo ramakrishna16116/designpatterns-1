@@ -1,19 +1,20 @@
 pipeline {
-    agent {
+
+    agent any
+    /*agent {
         node {
             label ""
             customWorkspace "/var/lib/jenkins/workspace/Pipeline1/RefactorAdapterPattern"
         }
-    }
+    }*/
 
     environment {
-        NEW_VERSION = '1.0.0'
+        NEW_VERSION '1.0.0'
     }
 
     stages {
         stage('Build') {
             steps {
-                echo 'Custom workspage ${env.customWorkspace}'
                 echo 'Building version ${env.NEW_VERSION}'
                 sh './gradlew build'
             }
