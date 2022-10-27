@@ -1,15 +1,15 @@
 pipeline {
-    //agent any
-    agent {
+    agent any
+    /*agent {
         label {
             label ""
-            customWorkspace "${workspace}/RefactorAdapterPattern"
+            customWorkspace "C:/work/${BRANCH_NAME}"
         }
-    }
+    }*/
 
     environment {
         NEW_VERSION = '1.0.0'
-        //${workspace} = echo '${workspace}/RefactorAdapterPattern'
+        ${workspace} = echo '${workspace}/RefactorAdapterPattern'
     }
 
     stages {
