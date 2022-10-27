@@ -30,8 +30,7 @@ pipeline {
             }*/
         }
     }
-
-    node('master') {
-        echo "workspace directory is ${workspace}"
-    }
+}
+node('master') {
+    echo "workspace directory is ${workspace}"
 }
