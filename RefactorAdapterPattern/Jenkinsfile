@@ -9,7 +9,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building version ${NEW_VERSION}'
-                sh './RefactorAdapterPattern/gradlew build'
+                sh './gradlew build'
             }
         }
         stage('Test') {
