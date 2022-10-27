@@ -22,7 +22,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing version ${NEW_VERSION}'
-                //sh './gradlew test'
+                sh './gradlew test'
             }
             /*post {
                 always {
