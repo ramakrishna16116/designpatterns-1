@@ -2,7 +2,7 @@ pipeline {
     agent any
     agent {
         label {
-            label ""
+            label = ""
             customWorkspace = "/var/lib/jenkins/workspace/Pipeline1/RefactorAdapterPattern"
         }
     }
