@@ -8,20 +8,20 @@ pipeline {
         }
     }*/
 
-    environment {
-        NEW_VERSION = '1.0.0'
+    parameters {
+        string(name: 'VERSION', defaultValue: '1.0.0', description: 'Build Version')
     }
 
     stages {
         stage('Build') {
             steps {
-                echo 'Building version ${env.NEW_VERSION}'
+                echo 'Building version ${parameters.VERSION}'
                 sh './gradlew build'
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing version ${NEW_VERSION}'
+                echo 'Testing version ${parameters.VERSION}'
                 sh './gradlew test'
             }
             /*post {
