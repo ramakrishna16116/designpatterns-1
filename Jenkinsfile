@@ -1,12 +1,6 @@
 pipeline {
 
     agent any
-    /*agent {
-        node {
-            label ""
-            customWorkspace "/var/lib/jenkins/workspace/Pipeline1/RefactorAdapterPattern"
-        }
-    }*/
 
     parameters {
         string(name: 'VERSION', defaultValue: '1.0.0', description: 'Build Version')
@@ -24,11 +18,11 @@ pipeline {
                 echo 'Testing version ${parameters.VERSION}'
                 sh './gradlew test'
             }
-            /*post {
+            post {
                 always {
-                    junit allowEmptyResults: false, testResults: "build/reports/tests/test/*.html"
+                    junit allowEmptyResults: false, testResults: "build/reports/tests/**/*.xml"
                 }
-            }*/
+            }
         }
     }
 }
