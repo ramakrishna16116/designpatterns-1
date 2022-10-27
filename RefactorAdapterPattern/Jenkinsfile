@@ -9,7 +9,7 @@ pipeline {
 
     environment {
         NEW_VERSION = '1.0.0'
-        ${workspace} = echo '${workspace}/RefactorAdapterPattern'
+        workspace = echo '${workspace}/RefactorAdapterPattern'
     }
 
     stages {
