@@ -9,13 +9,14 @@ pipeline {
 
     environment {
         NEW_VERSION = '1.0.0'
-        workspace = echo '${JENKINS_HOME}/RefactorAdapterPattern'
+        customWorkspace = echo '/var/lib/jenkins/workspace/Pipeline1/RefactorAdapterPattern'
     }
 
     stages {
         stage('Build') {
             steps {
-                echo 'Building version ${NEW_VERSION}'
+                echo 'Custom workspage ${env.customWorkspace}'
+                echo 'Building version ${env.NEW_VERSION}'
                 sh './gradlew build'
             }
         }
