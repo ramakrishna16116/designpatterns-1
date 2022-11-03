@@ -1,18 +1,18 @@
 public class MediaPlayer implements MusicPlayer{
     @Override
-    public void playMusic(String audioType, String fileName) {
+    public String playMusic(String audioType, String fileName) {
         switch(audioType) {
             case "mp3":
                 AudioPlayer audioPlayer = new AudioPlayer();
-                audioPlayer.playMusic(audioType, fileName);
+                return audioPlayer.playMusic(audioType, fileName);
             case "mp4":
                 Mp4Player mp4Player = new Mp4Player();
-                mp4Player.playMp4Player(fileName);
+                return mp4Player.playMp4Player(fileName);
             case "vlc":
                 VlcPlayer vlcPlayer = new VlcPlayer();
-                vlcPlayer.playVlcPlayer(fileName);
+                return vlcPlayer.playVlcPlayer(fileName);
             default:
-                System.out.println("Media type not supported.");
+                return "Media type not supported.";
         }
     }
 }

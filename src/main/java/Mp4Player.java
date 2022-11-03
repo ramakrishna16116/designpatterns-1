@@ -1,11 +1,11 @@
 public class Mp4Player implements AdvancedMediaPlayer {
     @Override
-    public void playVlcPlayer(String fileName) {
-        //do nothing
+    public String playVlcPlayer(String fileName) {
+        return null;
     }
 
     @Override
-    public void playMp4Player(String fileName) {
-        System.out.println("Playing mp4 file: " + fileName);
+    public String playMp4Player(String fileName) {
+        return "Playing mp4 file: " + fileName;
     }
 }
