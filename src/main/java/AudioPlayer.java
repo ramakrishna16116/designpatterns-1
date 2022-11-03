@@ -2,17 +2,17 @@ public class AudioPlayer implements MusicPlayer {
     MediaAdapter mediaAdapter;
     
     @Override
-    public void playMusic(String audioType, String fileName) {
+    public String playMusic(String audioType, String fileName) {
         if (audioType.equalsIgnoreCase("mp3")) {
-            System.out.println("Playing mp3 file: " + fileName);
+            return ("Playing mp3 file: " + fileName);
         } else if (audioType.equalsIgnoreCase("vlc")) {
             mediaAdapter = new MediaAdapter(audioType);
-            mediaAdapter.playMusic(audioType, fileName);
+            return mediaAdapter.playMusic(audioType, fileName);
         } else if (audioType.equalsIgnoreCase("mp4")){
             mediaAdapter = new MediaAdapter(audioType);
-            mediaAdapter.playMusic(audioType, fileName);
+            return mediaAdapter.playMusic(audioType, fileName);
         } else {
-            System.out.println("Media file not supported: " + audioType);
+            return ("Media file not supported: " + audioType);
         }
     }
 }

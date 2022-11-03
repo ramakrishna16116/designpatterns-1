@@ -10,11 +10,12 @@ public class MediaAdapter implements MusicPlayer {
     }
 
     @Override
-    public void playMusic(String audioType, String fileName) {
+    public String playMusic(String audioType, String fileName) {
         if (audioType.equalsIgnoreCase("mp4")) {
-            advancedMediaPlayer.playMp4Player(fileName);
+            return advancedMediaPlayer.playMp4Player(fileName);
         } else if (audioType.equalsIgnoreCase("vlc")) {
-            advancedMediaPlayer.playVlcPlayer(fileName);
+            return advancedMediaPlayer.playVlcPlayer(fileName);
         }
+        return fileName;
     }
 }
