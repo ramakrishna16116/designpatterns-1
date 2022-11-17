@@ -9,6 +9,12 @@ public class Driver {
         VlcPlayer vlcMusicPlayer = new VlcPlayer();
         vlcMusicPlayer.playVlcPlayer("song3.vlc");
 
-        audioPlayer.playMusic("wma", "song4.wma");
+        MusicPlayer player = new AudioPlayer();
+        player.playMusic("mp3","song1.mp3");
+        player = new MusicAdapter(new Mp4Player());
+        player.playMusic("mp4","song2.mp4");
+        player = new MusicAdapter(new VlcPlayer());
+        player.playMusic("file.avi","song3.vlc");
+
     }
 }
