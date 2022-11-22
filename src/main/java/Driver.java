@@ -9,5 +9,12 @@ public class Driver {
         audioPlayer.playMusic("song2.mp4");
         audioPlayer.playMusic("song3.vlc");
         audioPlayer.playMusic("wma", "song4.wma");
+
+        /* New feature for unsupported files to be detected with one input
+         * New features for mp4 and vlc to be added with two inputs
+         */
+        audioPlayer.playMusic("song5.wma");
+        audioPlayer.playMusic("mp4", "song6.mp4");
+        audioPlayer.playMusic("vlc", "song7.vlc");
     }
 }

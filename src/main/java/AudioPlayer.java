@@ -5,6 +5,16 @@ public class AudioPlayer implements MediaPlayer {
         if(audioType.equalsIgnoreCase("mp3")) {
             System.out.println("Playing mp3 file: " + fileName);
         }
+        // New features for vlc to be added with two inputs
+        else if(audioType.equalsIgnoreCase("vlc")) {
+            mediaAdapter = new MediaAdapter("vlc");
+            mediaAdapter.playMusic("vlc", fileName);
+        }
+        // New feature for mp4 to be added with two inputs
+        else if(audioType.equalsIgnoreCase("mp4")) {
+            mediaAdapter = new MediaAdapter("mp4");
+            mediaAdapter.playMusic("mp4", fileName);
+        }
         else {
             System.out.println("Audio type not supported for the file: " + fileName);
         }
@@ -22,6 +32,9 @@ public class AudioPlayer implements MediaPlayer {
             mediaAdapter = new MediaAdapter("mp4");
             mediaAdapter.playMusic("mp4", fileName);
         }
-        else;
+        //
+        else {
+            System.out.println("Audio type not supported for the file: " + fileName);
+        }
     }
 }

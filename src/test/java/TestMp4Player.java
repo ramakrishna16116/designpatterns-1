@@ -40,7 +40,7 @@ public class TestMp4Player {
     }
 
     @Test
-    public void testAudioPlayerMp4() {
+    public void testAudioPlayerMp4OneInput() {
         String output = "Playing mp4 file: song.mp4\n";
         String input = "song.mp4";
         AudioPlayer audioPlayer = new AudioPlayer();
@@ -49,7 +49,7 @@ public class TestMp4Player {
     }
 
     @Test
-    public void testAudioPlayerVlc() {
+    public void testAudioPlayerVlcOneInput() {
         String output = "Playing vlc file: song.vlc\n";
         String input = "song.vlc";
         AudioPlayer audioPlayer = new AudioPlayer();
@@ -58,10 +58,42 @@ public class TestMp4Player {
     }
 
     @Test
-    public void testAudioPlayerWma() {
+    public void testAudioPlayerWmaTwoInputs() {
         String output = "Audio type not supported for the file: song.wma\n";
         String input0 = "wma";
         String input1 = "song.wma";
+        AudioPlayer audioPlayer = new AudioPlayer();
+        audioPlayer.playMusic(input0, input1);
+        assertEquals(output, outContent.toString());
+    }
+
+    // Test new feature for unsupported files to be detected with one input
+    @Test
+    public void testAudioPlayerWmaOneInput() {
+        String output = "Audio type not supported for the file: song.wma\n";
+        String input = "song.wma";
+        AudioPlayer audioPlayer = new AudioPlayer();
+        audioPlayer.playMusic(input);
+        assertEquals(output, outContent.toString());
+    }
+
+    // Test new feature for mp4 to be added with two inputs
+    @Test
+    public void testAudioPlayerMp4TwoInputs() {
+        String output = "Playing mp4 file: song.mp4\n";
+        String input0 = "mp4";
+        String input1 = "song.mp4";
+        AudioPlayer audioPlayer = new AudioPlayer();
+        audioPlayer.playMusic(input0, input1);
+        assertEquals(output, outContent.toString());
+    }
+
+    // Test new features for vlc to be added with two inputs
+    @Test
+    public void testAudioPlayerVlcTwoInputs() {
+        String output = "Playing vlc file: song.vlc\n";
+        String input0 = "vlc";
+        String input1 = "song.vlc";
         AudioPlayer audioPlayer = new AudioPlayer();
         audioPlayer.playMusic(input0, input1);
         assertEquals(output, outContent.toString());
