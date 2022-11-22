@@ -30,11 +30,40 @@ public class TestMp4Player {
     }
 
     @Test
-    public void testMp4Player() {
-        String output = "Playing mp4 file: song2.mp4\n";
-        String input = "song2.mp4";
-        Mp4Player mp4Player = new Mp4Player();
-        mp4Player.playMp4Player(input);
+    public void testAudioPlayerMp3() {
+        String output = "Playing mp3 file: song.mp3\n";
+        String input0 = "mp3";
+        String input1 = "song.mp3";
+        AudioPlayer audioPlayer = new AudioPlayer();
+        audioPlayer.playMusic(input0, input1);
+        assertEquals(output, outContent.toString());
+    }
+
+    @Test
+    public void testAudioPlayerMp4() {
+        String output = "Playing mp4 file: song.mp4\n";
+        String input = "song.mp4";
+        AudioPlayer audioPlayer = new AudioPlayer();
+        audioPlayer.playMusic(input);
+        assertEquals(output, outContent.toString());
+    }
+
+    @Test
+    public void testAudioPlayerVlc() {
+        String output = "Playing vlc file: song.vlc\n";
+        String input = "song.vlc";
+        AudioPlayer audioPlayer = new AudioPlayer();
+        audioPlayer.playMusic(input);
+        assertEquals(output, outContent.toString());
+    }
+
+    @Test
+    public void testAudioPlayerWma() {
+        String output = "Audio type not supported for the file: song.wma\n";
+        String input0 = "wma";
+        String input1 = "song.wma";
+        AudioPlayer audioPlayer = new AudioPlayer();
+        audioPlayer.playMusic(input0, input1);
         assertEquals(output, outContent.toString());
     }
 }
