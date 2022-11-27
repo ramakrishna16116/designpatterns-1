@@ -1,3 +1,5 @@
+package com.company;
+
 public class Mp4Player implements AdvancedMediaPlayer {
     @Override
     public void playVlcPlayer(String fileName) {
