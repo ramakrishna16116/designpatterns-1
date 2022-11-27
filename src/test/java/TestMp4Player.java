@@ -1,8 +1,17 @@
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+package com.company;
 
-@RunWith(JUnit4.class)
-public class TestMp4Player {
+import static org.junit.jupiter.api.Assertions.*;
 
+class Mp4PlayerTest {
+
+    @org.junit.jupiter.api.Test
+    void playVlcPlayer() {
+        assertEquals("vlc", "vlc");
+    }
+
+    @org.junit.jupiter.api.Test
+    void playMp4Player() {
+        assertEquals("Mp4", "Mp4");
+
+    }
 }
